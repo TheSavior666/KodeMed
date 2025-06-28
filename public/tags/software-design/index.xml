@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Software Design on KodeMed</title>
+    <link>/tags/software-design/</link>
+    <description>Recent content in Software Design on KodeMed</description>
+    <generator>Hugo -- 0.147.9</generator>
+    <language>ar</language>
+    <lastBuildDate>Fri, 27 Jun 2025 02:43:35 +0100</lastBuildDate>
+    <atom:link href="/tags/software-design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Design Patterns و فاش كينفعو؟ </title>
+      <link>/posts/designpatterns101/</link>
+      <pubDate>Fri, 27 Jun 2025 02:43:35 +0100</pubDate>
+      <guid>/posts/designpatterns101/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;سلام شباب 👋
+هدا أول Blog ليا فهد newsletter 📬
+أنقدم لكم راسي بش ندوز لمفيد
+أنا سميتي Mohammed مهندس معلوميات 💻 دكشي ديال طبرمجيت&lt;/p&gt;
+&lt;p&gt;منطولش عليكم بزاف ⏱️
+أول حاجة بغيت ندوي فيها، او من شحال هادي كنتناقش فيها مع دراري،
+&lt;strong&gt;لي هي: Design Patterns 🤔
+و فاش كينفعو؟ 🔧&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;من l&amp;rsquo;experience ديالي 🎓 و دكشي لي كنعرف (الله إزيدنا) 🤲
+بزاف ديال دراري كيخلعهم موضوع Design Patterns
+دكشي علاش قررت ندير series ندوي فيهم غير على هاد lConcepts 🎯&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

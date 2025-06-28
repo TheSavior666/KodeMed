@@ -1,0 +1,50 @@
+baseURL = "/"
+languageCode = 'ar'
+defaultContentLanguage = "ar"
+title = 'KodeMed'
+theme = 'PaperMod'
+
+
+[params]
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  rtl = true
+  ShowCodeCopyButtons = true
+  [params.homeInfoParams]
+    Title = "👋 واش اشباب"
+    Content = """
+      أنا مهندس برمجيات مهتم بالـ System Design، 
+      تطوير التطبيقات بالـ Java/Spring، والـ Software Architecture.
+      هاد المدونة جاية باش نشارك معاكم المعرفة ديالي،
+      نسهل الفهم ديال مفاهيم معقدة،
+      ونساهم فـ المحتوى التقني باللغة العربية (وخاصة بالدّارجة المغربية).
+
+      غادي تلقاو هنا مواضيع مفيدة على:
+      - Design Patterns 🧠
+      - Spring Boot و Java ☕
+      - Microservices Architecture 🧱
+      - وأفكار فـ System Design 
+
+      نتمنى تستافدو، ومرحبا بأي اقتراحات ❤️
+      """
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/MEDAFKARI"
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/medafk"
+
+
+[[menu.main]]
+  name = "دار"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "بوستات"
+  url = "/posts/"
+  weight = 2
+
+
+

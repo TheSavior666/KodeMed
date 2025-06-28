@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>/categories/blog/</loc>
+    <lastmod>2025-06-27T02:43:35+01:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2025-06-27T02:43:35+01:00</lastmod>
+  </url><url>
+    <loc>/tags/code/</loc>
+    <lastmod>2025-06-27T02:43:35+01:00</lastmod>
+  </url><url>
+    <loc>/tags/design-patterns/</loc>
+    <lastmod>2025-06-27T02:43:35+01:00</lastmod>
+  </url><url>
+    <loc>/posts/designpatterns101/</loc>
+    <lastmod>2025-06-27T02:43:35+01:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2025-06-27T02:43:35+01:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2025-06-27T02:43:35+01:00</lastmod>
+  </url><url>
+    <loc>/tags/software-design/</loc>
+    <lastmod>2025-06-27T02:43:35+01:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-06-27T02:43:35+01:00</lastmod>
+  </url>
+</urlset>
