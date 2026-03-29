@@ -4,25 +4,116 @@ draft = false
 title = 'Java Design: علاش Interfaces أحسن من Abstract Classes؟'
 tags = ["Java", "Interfaces", "Abstract Classes", "OOP", "Design Patterns"]
 categories = ["blog"]
-lang = "en"
 
 [cover] 
     image = "Interfaces vs Abstract Classes comparison.png"
     relative = true
 +++
 ----------------------------------------------------------
-3lach khasna nfdlou interfaces 3la abstract classes f Java 7it kay3tiw wahed flexibility kbira f design dyal applications. F Java kayn single inheritance, yani class t9der textend ghir abstract class wa7da, walakin t9der timplementi bzaf dyal interfaces f nafs lwa9t. Hadi katkhlli interfaces ahsan bach nbniw systems scalable w flexible.
+3علاش خاصنا نفضّلو interfaces على abstract classes فـ Java؟ حيت كيعطيو واحد flexibility كبيرة فـ design ديال applications. فـ Java كاين single inheritance، يعني class تقدر غير تورث من abstract class وحدة، ولكن تقدر تطبّق بزاف ديال interfaces فـ نفس الوقت. هادشي كيخلّي interfaces حسن باش نبنيو systems scalable و flexible.
 
-Interfaces kaykhlou lina nzido behavior l classes bla ma nbddlou hierarchy dyalhom. Hada kaytsamma mixin, b7al Comparable li kaykhli objects ykounou comparable. Abstract classes ma y9drouch idirou hadchi 7it khas ykounou parent direct, w hadchi kay9yed design w kaydirou rigid.
+Interfaces كيخلّيو لينا نزيدو behavior ل classes بلا ما نبدّلو الhierarchy ديالهم. هادا كيتسمّى mixin، بحال Comparable لي كيخلّي objects يقدرو يتقارنو. Abstract classes ما يقدروش يديرو هادشي حيث خاصهم يكونو parent مباشر، وهادشي كيقيّد الdesign وكيخلّيه rigid.
 
-Zid 3la hadchi, interfaces sahlin bach nimplementiwhom 3la classes 9damin (legacy code). Ghir katzid implements w katktb methods li khasin . B l3aks, abstract classes s3ib tdkhlhom ila makanchou mn lwl f design dyal project.
+زيد على هادشي، interfaces ساهلين باش نطبّقوهم على classes قدام (legacy code). غير كتزيد implements وكتكتب methods لي خاصين. بالعكس، abstract classes صعيب تدخلهم إلا ما كانوش من اللول فـ design ديال المشروع.
 
-Mn ba3d Java 8, interfaces wllaw fihom default methods, yani t9der tktb implementation direct f interface. Hadi katna9s duplication w katsahl 3la developers lkhadma. Walakin kaynin restrictions: ma t9derch tdir default methods dyal equals, hashCode, w toString, w ma kaynach instance fields.
+من بعد Java 8، interfaces وْلاو فيهم default methods، يعني تقدر تكتب implementation مباشرة فـ interface. هادي كتنقص duplication وكتسهّل الخدمة على developers. ولكن كاينين restrictions: ما تقدرش تدير default methods ديال equals و hashCode و toString، وما كايناش instance fields.
 
-Bach njm3ou bin interfaces w abstract classes, kayn wahed pattern smitou skeletal implementation. Fih katdir interface bach tحدد contract, w mn b3d abstract class katimplementih w kat3ti implementation joz2iya. Developer ghir kaykmmel primitive methods w lb9i kaykoun wajd. Hada kaytsamma Template Method Pattern.
+🧠 Skeletal Implementation (شرح + كود)
 
-Ila ma9drtich t-extend abstract class (7it kayn inheritance akhor), t9der tst3ml composition, li kattsamma simulated multiple inheritance. Kat7et object west class dyalek w katstafed mn logic dyalo bla ma t7taj inheritance.
+باش نجمعو بين interfaces و abstract classes، كاين واحد pattern سميتو skeletal implementation.
 
-kholasa : interfaces homa a7san option bach tdefini types 7it kay3tiw flexibility, reusability, w scalability. Abstract classes khashom ytst3mlou ghir bach y3awnou f implementation, khasatan m3a skeletal implementation bach tsahl lkhadma bla ma tse3eb design dyalek.
+الفكرة:
 
-source : item 20 - Effective Java 3rd Edition - Joshua Bloch
+كنعرّفو interface فيها العقد (contract)
+ومن بعد كنديرو abstract class كتطبّق داك interface وكتعطي implementation جزئية
+developer غير كيكمّل methods البسيطة (primitive methods)
+
+هادشي كيعاون بزاف وكيقصّر الخدمة.
+
+👇 مثال
+1. Interface
+public interface MyList<E> {
+    int size();
+    E get(int index);
+
+    default boolean isEmpty() {
+        return size() == 0;
+    }
+}
+2. Skeletal Implementation (Abstract Class)
+public abstract class AbstractMyList<E> implements MyList<E> {
+
+    @Override
+    public boolean isEmpty() {
+        return size() == 0;
+    }
+
+    public boolean contains(E element) {
+        for (int i = 0; i < size(); i++) {
+            if (get(i).equals(element)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+👉 هنا عطينا logic عام، ولكن خلّينا size() و get() بلا implementation.
+
+3. Concrete Class (الاستعمال)
+import java.util.ArrayList;
+import java.util.List;
+
+public class MyArrayList<E> extends AbstractMyList<E> {
+
+    private List<E> internal = new ArrayList<>();
+
+    @Override
+    public int size() {
+        return internal.size();
+    }
+
+    @Override
+    public E get(int index) {
+        return internal.get(index);
+    }
+
+    public void add(E element) {
+        internal.add(element);
+    }
+}
+4. Usage
+public class Main {
+    public static void main(String[] args) {
+        MyArrayList<String> list = new MyArrayList<>();
+
+        list.add("Java");
+        list.add("Spring");
+
+        System.out.println(list.contains("Java")); // true
+        System.out.println(list.isEmpty());        // false
+    }
+}
+🔥 Template Method Pattern
+
+هاد الطريقة كتدخل حتى فـ Template Method Pattern:
+
+abstract class فيها logic عام
+والclasses لي كيرثو منها كيكمّلو التفاصيل
+⚙️ Composition بدل Inheritance
+
+إلا ما قدرتيش تورث من abstract class (حيت كاين inheritance آخر)، تقدر تستعمل composition:
+
+كتدير object داخل class ديالك
+وكتستافد من logic ديالو بلا inheritance
+
+هادشي كيتسمّى simulated multiple inheritance
+
+✅ الخلاصة
+interfaces هما أحسن اختيار باش تعرّف types
+كيعطيو flexibility و scalability
+abstract classes خاصهم يتستعملو غير باش يعاونو فـ implementation
+skeletal implementation pattern كيسهّل الخدمة بزاف
+
+📚 المصدر:
+Effective Java (3rd Edition) - Joshua Bloch (Item 20)
