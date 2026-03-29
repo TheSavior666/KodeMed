@@ -4,14 +4,13 @@ draft = false
 title = 'Java Design: علاش Interfaces أحسن من Abstract Classes؟'
 tags = ["Java", "Interfaces", "Abstract Classes", "OOP", "Design Patterns"]
 categories = ["blog"]
+lang = "en"
 
 [cover] 
     image = "Interfaces vs Abstract Classes comparison.png"
     relative = true
 +++
 ----------------------------------------------------------
-<div style="direction: ltr !important; unicode-bidi: embed !important; text-align: left !important;">
-
 3lach khasna nfdlou interfaces 3la abstract classes f Java 7it kay3tiw wahed flexibility kbira f design dyal applications. F Java kayn single inheritance, yani class t9der textend ghir abstract class wa7da, walakin t9der timplementi bzaf dyal interfaces f nafs lwa9t. Hadi katkhlli interfaces ahsan bach nbniw systems scalable w flexible.
 
 Interfaces kaykhlou lina nzido behavior l classes bla ma nbddlou hierarchy dyalhom. Hada kaytsamma mixin, b7al Comparable li kaykhli objects ykounou comparable. Abstract classes ma y9drouch idirou hadchi 7it khas ykounou parent direct, w hadchi kay9yed design w kaydirou rigid.
@@ -27,5 +26,3 @@ Ila ma9drtich t-extend abstract class (7it kayn inheritance akhor), t9der tst3ml
 kholasa : interfaces homa a7san option bach tdefini types 7it kay3tiw flexibility, reusability, w scalability. Abstract classes khashom ytst3mlou ghir bach y3awnou f implementation, khasatan m3a skeletal implementation bach tsahl lkhadma bla ma tse3eb design dyalek.
 
 source : item 20 - Effective Java 3rd Edition - Joshua Bloch
-
-</div>
