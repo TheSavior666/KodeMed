@@ -10,7 +10,7 @@ categories = ["blog"]
     relative = true
 +++
 ----------------------------------------------------------
-<div style="direction: ltr !important; text-align: left !important;">
+<div style="direction: ltr !important; unicode-bidi: embed !important; text-align: left !important;">
 
 3lach khasna nfdlou interfaces 3la abstract classes f Java 7it kay3tiw wahed flexibility kbira f design dyal applications. F Java kayn single inheritance, yani class t9der textend ghir abstract class wa7da, walakin t9der timplementi bzaf dyal interfaces f nafs lwa9t. Hadi katkhlli interfaces ahsan bach nbniw systems scalable w flexible.
 
