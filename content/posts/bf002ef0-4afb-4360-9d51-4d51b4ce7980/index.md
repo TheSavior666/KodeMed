@@ -32,6 +32,7 @@ developer غير كيكمّل methods البسيطة (primitive methods)
 
 👇 مثال
 1. Interface
+```java
 public interface MyList<E> {
     int size();
     E get(int index);
@@ -40,7 +41,9 @@ public interface MyList<E> {
         return size() == 0;
     }
 }
+```
 2. Skeletal Implementation (Abstract Class)
+```java
 public abstract class AbstractMyList<E> implements MyList<E> {
 
     @Override
@@ -57,10 +60,11 @@ public abstract class AbstractMyList<E> implements MyList<E> {
         return false;
     }
 }
-
+```
 👉 هنا عطينا logic عام، ولكن خلّينا size() و get() بلا implementation.
 
 3. Concrete Class (الاستعمال)
+```java
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,7 +86,10 @@ public class MyArrayList<E> extends AbstractMyList<E> {
         internal.add(element);
     }
 }
+```
+
 4. Usage
+```java
 public class Main {
     public static void main(String[] args) {
         MyArrayList<String> list = new MyArrayList<>();
@@ -94,6 +101,7 @@ public class Main {
         System.out.println(list.isEmpty());        // false
     }
 }
+```
 🔥 Template Method Pattern
 
 هاد الطريقة كتدخل حتى فـ Template Method Pattern:
